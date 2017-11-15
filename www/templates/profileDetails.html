@@ -1,0 +1,47 @@
+<ion-view title="Profile Details" id="page19" class=" ">
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Profile Details</h1>
+      </div>
+    <ion-content padding="true" class="has-header">
+        <form id="profileDetails-form8" class="list ">
+            <ion-item class="item-thumbnail-left item-icon-right dark  " id="profileDetails-list-item27">
+                <img src="{{picture}}">
+                <h2dark>{{details_profile.name}}
+                    <p style="white-space:normal;">Actor</p>
+                    <i class="icon ion-information-circled"></i>
+                </h2dark>
+            </ion-item>
+        </form>
+        <div id="profileDetails-button-bar13" class=" button-bar "></div>
+        <div id="profileDetails-button-bar14" class=" button-bar ">
+            <a ui-sref="tabsController.profile" id="profileDetails-button42" style="font-weight:600;color:#160B03;" class=" button button-stable  button-block button-outline ">Basic</a>
+            <button id="profileDetails-button43" style="font-weight:600;color:#160B03;font-size:-1px;" class=" button button-balanced  button-block ">Detail</button>
+        </div>
+        <ion-list id="profileDetails-list15" class=" ">
+            <ion-item id="profileDetails-list-item28" class="  ">
+            <span style="width:20%;float:left;">
+            Age : </span>
+             <input type="text" ng-model="details_profile.age" style="width:80%;float:right; ">
+            </ion-item>
+            <ion-item id="profileDetails-list-item29" class="  "><span style="width:20%;float:left;">Height : </span>
+              <input type="text" ng-model="details_profile.height" style="width:80%;float:right; ">
+
+            </ion-item>
+             <ion-item id="profileDetails-list-item29" class="  ">
+                <span class="input-label" style="width:20%;float:left;">Gender :</span>
+                <select ng-model="details_profile.gender" >
+                    <option  selected>{{details_profile.gender}}</option>
+                        
+                    <option ng-if="details_profile.gender==='Male' ||details_profile.gender==='male'|| details_profile.gender==='Transgender' || details_profile.gender==='transgender' || details_profile.gender===''|| details_profile.gender==='null'">Female</option>
+                    <option ng-if="details_profile.gender==='Female' ||details_profile.gender==='female'|| details_profile.gender==='Transgender' || details_profile.gender==='transgender' || details_profile.gender===''|| details_profile.gender==='null'">Male</option>
+                    <option ng-if="details_profile.gender==='Female' ||details_profile.gender==='female'|| details_profile.gender==='Male' || details_profile.gender==='male' || details_profile.gender===''|| details_profile.gender==='null'">Transgender</option>
+                </select>
+            </ion-item>
+            <ion-item id="profileDetails-list-item30" class="  "><span style="width:20%;float:left;">Weight : </span><input type="text" ng-model="details_profile.weight" style="width:80%;float:right; "></ion-item>
+            <!-- <ion-item class="item-icon-right  " id="profileDetails-list-item31">Additional Description
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i>
+            </ion-item> -->
+            <button ng-click="save()" id="signUp-button6" style="font-weight:600;color:#160B03;"  class=" savebut button button-balanced  button-small button-block ">save</button>
+        </ion-list>
+    </ion-content>
+</ion-view>

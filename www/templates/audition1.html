@@ -1,0 +1,109 @@
+
+
+<style type="text/css">
+    .download-sheet{
+    line-height: 20px;
+    font-size: 12px;
+    color:#00000;
+    }
+    [contenteditable="true"] { padding: 10px; outline: 1px dashed #CCC; }
+    [contenteditable]:focus {
+    border-style: dashed;
+    border-color: black;
+    border-width: 1px;
+    }
+    .al{
+    text-align: center;
+    }
+    textarea {
+    padding-left: 20px;
+    }
+    textarea {
+    text-align: center;
+    }
+</style>
+<ion-view title="Audition Detail" id="page15"  align-title="center" >
+    <div class="bar bar-header bar-light " style="background-color:#F8F8F8">
+        <h1 class="title">Audition Detail</h1>
+    </div>
+    <ion-content padding="true"  ng-controller="audition1Ctrl">
+        <ion-list id="audition1-list20" class=" ">
+            <ion-item class="item-avatar item-icon-right  " id="audition1-list-item44" href="#/page1/tab4/page24/{{req_id}}" >
+                <img ng-if="rdetails.image==null" src="http://placehold.it/300x300" />
+                <img ng-if ="rdetails.image !=null"  src="https://destini.io/public/frontEnd/uploads/image/{{rdetails.image}}">
+                <h2>Requester</h2>
+                <p style="white-space:normal;">{{rdetails.first_name}}{{rdetails.last_name}}</p>
+                <i class="icon ion-information-circled"></i>
+            </ion-item>
+        </ion-list>
+        <ion-list id="audition1-list20" class=" ">
+            <ion-item  class="item item-divider">Audition Location</ion-item>
+            <ion-item class="item item-text-wrap">
+                <p>{{response.city}} {{response.state}} {{response.country}}</p>
+            </ion-item>
+            <ion-item class="item item-divider">Audition Name</ion-item>
+            <ion-item class="item item-text-wrap">{{response.session_name}}</ion-item>
+            <ion-item class="item item-divider">Audition Type</ion-item >
+            <ion-item  class="item item-text-wrap">{{response.session_type}}</ion-item>
+            <ion-item  class="item item-divider">Audition Description</ion-item>
+            <ion-item class="item item-text-wrap">{{response.short_description}}</ion-item>
+            <ion-item  class="item item-divider">Audition Instructions</ion-item>
+            <ion-item  class="item item-text-wrap">{{response.full_description}}</ion-item>
+            <ion-item  class="item item-divider">
+            Additional Document</ion-item 
+            <ion-item  class="item">
+                <button id="audition1-button31" style="font-weight:600;color:#160B03;font-size:14px;" class=" button button-balanced  button-block icon-right ion-ios-download " ng-click="show(response.id)">Download</button>
+            </ion-item>
+        </ion-list>
+        <!--div class="item item-body " id="audition1-list-item-container7">
+            <h3 id="audition1-heading9" style="color:#000000;font-weight:600;text-align:center;" class=" ">Audition Location</h3>
+            <form id="audition1-form25" class="list ">
+            
+            
+            <p  contenteditable="false" name="name" strip-br="true" style="white-space:normal; ">{{response.city}}&nbsp;&nbsp;{{response.state}}&nbsp;&nbsp;{{response.country}}</p>
+                <!--label class="item item-input al" id="audition1-textarea6">
+            
+                    <textarea placeholder="" readonly="true" ng-if="response.country">{{response.city}}&nbsp;&nbsp;{{response.state}}&nbsp;&nbsp;{{response.country}}</textarea>
+                    <textarea placeholder="" readonly="true" ng-if="!response.country">---</textarea>
+                </label-->
+        <!--h3 id="audition1-heading11" style="color:#000000;font-weight:600;text-align:center;" class=" ">Audition Name</h3>
+            <label class="item item-input al" id="audition1-textarea7">
+                <textarea placeholder="" readonly="t" ng-if="response.session_name">{{response.session_name}}</textarea>
+                <textarea placeholder="" readonly="t" ng-if="!response.session_name">---</textarea>
+            </label>
+            
+            <h3 id="audition1-heading11" style="color:#000000;font-weight:600;text-align:center;" class=" ">Audition Type</h3>
+            <label class="item item-input al" id="audition1-textarea7">
+                <textarea placeholder="" readonly="t" ng-if="response.session_type">{{response.session_type}}</textarea>
+                <textarea placeholder="" readonly="t" ng-if="!response.session_type">---</textarea>
+            </label>
+            
+            <h3 id="audition1-heading11" style="color:#000000;font-weight:600;text-align:center;" class=" ">Audition Description</h3>
+            <label class="item item-input al" id="audition1-textarea7">
+                <textarea placeholder="" readonly="t" ng-if="response.short_description">{{response.short_description}}</textarea>
+                <textarea placeholder="" readonly="t" ng-if="!response.short_description">---</textarea>
+            </label>
+            <h3 id="audition1-heading13" style="color:#000000;font-weight:600;text-align:center;" class=" ">Audition Instruction</h3>
+            <label class="item item-input al" id="audition1-textarea9">
+                <textarea placeholder="" readonly="t" ng-if="response.full_description">{{response.full_description}}</textarea>
+                <textarea placeholder="" readonly="t" ng-if="!response.full_description">---</textarea>
+            </label>
+            </form>
+            </div-->
+        <!--form id="audition1-form15" class="list ">
+            <div class="item item-body " id="audition1-list-item-container11">
+                <form id="audition1-form26" class="list ">
+                    <h3 id="audition1-heading15" style="color:#000000;font-weight:600;text-align:center;" class=" ">Additional Documents</h3>
+                </form>
+                <button id="audition1-button31" style="font-weight:600;color:#160B03;font-size:14px;" class=" button button-balanced  button-block icon-right ion-ios-download ">Download</button>
+            </div>
+            </form-->
+        <div id="audition1-button-bar6" class=" button-bar ">
+            <button ng-if="applied.indexOf(response.id) === -1"  id="audition1-button32" style="font-weight:600;color:#160B03;font-size:14px;" class=" button button-balanced  button-block icon-right ion-forward" ng-click="check(response.id)">Apply</button>
+            <button ng-if="applied.indexOf(response.id) != -1" disabled ui-sref="tabsController.questions" id="audition1-button32" style="font-weight:600;color:#160B03;font-size:14px;" class=" button button-balanced  button-block icon-right ion-forward">Apply</button>
+            <button ng-click="savePin(response.id)" id="audition1-button33" style="font-weight:600;color:#160B03;font-size:14px;" class=" button button-light  button-block button-outline icon-right ion-pin ">Pin</button>
+            <a ui-sref="tabsController.auditions" id="audition1-button34" style="font-weight:600;color:#160B03;font-size:14px;" class=" button button-balanced  button-block ">Cancel</a>
+        </div>
+    </ion-content>
+</ion-view>
+

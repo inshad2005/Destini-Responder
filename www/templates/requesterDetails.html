@@ -1,0 +1,45 @@
+<style type="text/css">
+
+.enterdetail{
+  border: 1px solid black;
+  height: 170px;
+  width: 340px;
+  padding: 10px 10px 10px 10px;
+}
+.inner.item.ng-binding {
+  background: #eeeeee none repeat scroll 0 0;
+}
+</style>
+<ion-view title="Requester Details" id="page24" >
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Requester Details</h1>
+      </div>
+    <ion-content padding="true" class="has-header" ng-controller="requesterDetailsCtrl">
+        <div id="requesterDetails-button-bar16" class=" button-bar "></div>
+        <div id="requesterDetails-button-bar17" class=" button-bar "></div>
+        <ion-list id="requesterDetails-list21" class=" ">
+            <ion-item class="item-avatar item-icon-right  " id="requesterDetails-list-item50" href="tel:5517788999">
+                   <img ng-if="rdet.image==null" src="http://placehold.it/300x300" />
+                   <img ng-if ="rdet.image !=null"  src="https://destini.io/public/frontEnd/uploads/image/{{rdet.image}}">
+                <h2>{{rdet.first_name}}{{rdet.last_name}}</h2>
+                <p style="white-space:normal;">Casting Director</p>
+                <i class="icon ion-information-circled"></i>
+            </ion-item>
+            <ion-item id="requesterDetails-list-item46" class="  ">Zip Code :{{rdet.zipcode}}</ion-item>
+            <ion-item class="item-icon-right  " id="requesterDetails-list-item47">About me
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i>
+            </ion-item>
+            <ion-list><ion-item class="inner">Organisation Name: {{rdet.organisation_name}}</ion-item><ion-item class="inner">Email: {{rdet.email}}</ion-item><ion-item class="inner"> Contact: {{rdet.contact}}</ion-item><ion-item class="item item-text-wrap inner">{{rdet.about_me}}</ion-item></ion-list>
+            <ion-item class="item-icon-right  " id="requesterDetails-list-item48">Credits
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i></ion-item>
+                <ion-list><ion-item class="inner">Movies Credits: {{rdet.movies_credits}}</ion-item></ion-list>
+            
+            <ion-item class="item-icon-right  " id="requesterDetails-list-item49">Additional Description
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i> </ion-item>
+                 <ion-list><ion-item class="inner">Facebook Profile: {{rdet.facebook_profile_link}}</ion-item></ion-list>
+           
+        </ion-list>
+        <button ng-click="addContact()" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block ">Add Contact</button>
+    </ion-content>
+</ion-view>
+

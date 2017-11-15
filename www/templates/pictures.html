@@ -1,0 +1,76 @@
+
+<style> 
+.c{
+border: 1px solid black;
+height: 210px;
+width:250px;
+margin:10px 10px 10px 10px; 
+} 
+
+div.show-image {
+    position: relative;
+    float:left;
+    margin:50px;
+}
+div.show-image:hover img{
+    opacity:0.2;
+}
+div.show-image:hover input {
+    display: block;
+}
+div.show-image input {
+    position:absolute;
+    display:none;
+}
+div.show-image input.makeaprofilepic {
+    top:0;
+    left:0;
+}
+div.show-image input.delete {
+    top:0;
+    left:74%;
+}
+div.show-image {
+  float: left;
+  margin: 20px 20px 20px 20px;
+  position: relative;
+}
+div.show-image input.delete {
+  left: 90%;
+  top: 2%;
+   background-color: #ff3333;
+    border: none;
+    color: white;
+}
+</style>
+
+<ion-view title="Pictures" id="page22" >
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+<button class="button-icon icon ion-ios-arrow-back" ng-click="$ionicGoBack()"> Back</button>
+          <h1 class="title">Pictures</h1>
+      </div>
+    <ion-content padding="true" class="has-header" ng-controller="picturesCtrl">
+
+    <div class="c show-image" ng-if="x" ng-repeat="x in records track by $index"><img ng-src="https://destini.io/public/frontEnd/uploads/image/{{x}}" style="width:100%;height:100%"><input ng-click="deletepicture(x)" class="delete" type="button"  value="X" />
+    </div><br>
+
+        <!-- <div class="">
+            <img src="img/PJyUxwxCRxeSh5MNkxFh_profileimage.jpeg" width="100" height="100" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <div class="spacer" style="width: 300px; height: 15px;"></div>
+        <div class="">
+            <img src="img/kkdn8FcAR7qM0XbVZq2p_profileimage.jpeg" width="100" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <div class="spacer" style="width: 300px; height: 22px;"></div>
+        <div class="">
+            <img src="img/wV3QIRg5S6WIUwapuvkp_profileimage.jpeg" width="100" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div> 
+        <div class="spacer" style="width: 300px; height: 23px;"></div>
+        <div class="">
+            <img src="{{picture}}" width="100" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>-->
+
+
+        <button id="pictures-button53" style="font-weight:600;color:#160B03;" ng-click="getPicture()" class=" button button-balanced  button-block ">Upload a Picture</button>
+    </ion-content>
+</ion-view>

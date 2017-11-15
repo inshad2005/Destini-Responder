@@ -1,0 +1,49 @@
+<style type="text/css">
+    .aboutmekatext {
+  background: #fafafc none repeat scroll 0 0;
+  display: block;
+  font-size: 14px;
+  height: 100px;
+  line-height: 1.3;
+  padding-left: 8px;
+  padding-top: 6px;
+  width: 246px;
+}
+
+[contenteditable="true"] { padding: 10px; outline: 1px dashed #CCC; }
+ [contenteditable]:focus {
+    border-style: dashed;
+    border-color: black;
+    border-width: 1px;
+}
+</style>
+<ion-view title="Response" id="page21" >
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Response</h1>
+      </div>
+    <ion-content padding="true" class="has-header">
+        <form id="response-form10" class="list ">
+            <ion-list id="response-list17" class=" " ng-controller="responseCtrl">
+                
+       
+			 <h4 aria-label="Question">Question</h4>
+              <p ng-model="ques" contenteditable="false" style="white-space:normal;">{{ques}}</p>
+            
+               
+               <!-- <label class="item item-input " id="response-input22">
+                     <span class="input-label">What is your favorite color ? and Why ?</span> 
+                    <input type="text" placeholder="" readonly="true">
+                </label>-->
+            </ion-list>
+			<h4 aria-label="Answer">Answer</h4>
+            <p ng-model="data.answer" contenteditable="true" style="white-space:normal;">{{questions.answer}}</p>
+            <!--span  aria-label="About me ">Answer:</span>
+			 
+            <textarea class="aboutmekatext item-text-wrap"  name="" class="form-control" value="{{questions.answer}}"  ng-model="answer" ></textarea>
+            <!-- <p id="response-markdown19" style="color:#000000;" class=" ">My favorite color is Green. Its a symbol of positiveness, and makes you look forward to everything.</p> -->
+            <div class="spacer" style="height: 40px;"></div>
+            <a ng-click="saveQues(answer)" id="response-button45" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block ">Next Question</a>
+            <a ui-sref="tabsController.mediaUpload" id="response-button47" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block ">Skip</a>
+        </form>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,30 @@
+
+
+<ion-view title="Add Documents" id="page12" class=" ">
+    <div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+        <h1 class="title">Add Documents</h1>
+    </div>
+    <ion-content padding="true" class="has-header" ng-controller="addDocumentsCtrl">
+    <form name="doc" enctype="multipart/form-data">
+        <div class="item item-body " id="addDocuments-list-item-container6">
+            <p id="addDocuments-markdown11" style="margin-top:0px;color:#000000;" class=" ">Upload Your
+                <strong>Documents (only pdf,doc,docx or txt)</strong>
+            </p>
+            <p id="addDocuments-markdown12" style="color:#000000;" class=" ">(optional)</p>
+            <form id="addDocuments-form14" class="list ">
+                <label class="item item-select " id="addDocuments-select3">
+                    <span class="input-label">Type</span>
+                    <select>
+                        <option value="resume">Resume</option>
+                        <option value="document">Document</option>
+                    </select>
+                </label>
+            </form>
+        </div>
+        <input type="file" ng-model="file">
+        <a id="resume-button23" style="color:#160B03;" class=" button button-balanced  button-block" ng-click="showValue()"><i class="icon ion-android-folder-open"></i> Choose Document</a>
+        <a ui-sref="tabsController.submissionConfirmation" id="addDocuments-button20" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block icon-right ion-forward ">Submit Application</a>
+        </form>
+    </ion-content>
+</ion-view>
+

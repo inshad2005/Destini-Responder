@@ -1,0 +1,72 @@
+<style type="text/css">
+ .aboutmekatext {
+  background: #fafafc none repeat scroll 0 0;
+  display: block;
+  font-size: 14px;
+  height: 100px;
+  line-height: 1.3;
+  padding-left: 8px;
+  padding-top: 6px;
+  width: 246px;
+}
+.queshead{
+color:green;
+}
+pre {
+  background:#EEE;
+  padding:5px;
+  width: 290px;
+}
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+  
+}
+
+[contenteditable="true"] { padding: 10px; outline: 1px dashed #CCC; }
+ [contenteditable]:focus {
+    border-style: dashed;
+    border-color: black;
+    border-width: 1px;
+}
+</style>
+<ion-view title="Questions" id="page20" >
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Question</h1>
+      </div>
+
+    <ion-content padding="true" class="has-header" ng-controller="questionsCtrl">
+        <!--form id="questions-form9" class="list"-->
+            <ion-list id="questions-list16" class=" " >
+            
+                <ion-item class="item-icon-right item-text-wrap"  ng-repeat="que in questions"  ng id="questions-list-item33" >
+				      
+				        <h4 class="queshead" ng-show="que.question!=''">Question {{current + $index+1}} : {{que.question}}</h4>
+				        <div class="spacer" style="height: 5px;" ng-show="que.question!=''"></div>
+						<h4 aria-label="Answer" ng-show="que.question!=''">Answer</h4>
+						<input ng-if="!answers[$index][0] && que.question!=''" type="text" name="action{{$index + 1}}" ng-model="reply[que.id]" ng-model="reply.ans" strip-br="true"    placeholder="Enter Your Answer here" style="white-space:normal;">
+						<input ng-show="answers[$index][0] && que.question!=''" type="text" name="action{{$index + 1}}" ng-model="reply[que.id]" ng-model="reply.ans" strip-br="true"    placeholder="{{answers[$index][0]}}" style="white-space:normal;">
+						
+                </ion-item>
+                <!-- <ion-item class="item-icon-right  " id="questions-list-item35" ui-sref="tabsController.response">Question 2
+                    <i class="icon ion-android-arrow-dropdown-circle"></i>
+                </ion-item>
+                <ion-item class="item-icon-right  " id="questions-list-item36" ui-sref="tabsController.response">Question 3
+                    <i class="icon ion-android-arrow-dropdown-circle"></i>
+                </ion-item>
+                <ion-item class="item-icon-right  " id="questions-list-item37" ui-sref="tabsController.response">Question 4
+                    <i class="icon ion-android-arrow-dropdown-circle"></i>
+                </ion-item>
+                <ion-item class="item-icon-right  " id="questions-list-item38" ui-sref="tabsController.response">Question 5
+                    <i class="icon ion-android-arrow-dropdown-circle"></i>
+                </ion-item>
+                <ion-item class="item-icon-right  " id="questions-list-item34" ui-sref="tabsController.response">Question 6
+                    <i class="icon ion-android-arrow-dropdown-circle"></i>
+                </ion-item> -->
+            </ion-list>
+			 <a  id="questions-button48" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block" ng-click="markQues()">Proceed Next</a>
+		
+            <a ng-if="num_video != '0'  || num_image != '0'" ui-sref="tabsController.mediaUpload" id="questions-button48" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block ">Skip</a>
+        <!--form-->
+    </ion-content>
+</ion-view>

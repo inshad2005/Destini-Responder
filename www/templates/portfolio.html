@@ -1,0 +1,79 @@
+<style type="text/css">
+  
+  .item-input input, .item-input textarea {
+  border: 0 none;
+  width: 210%;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  color: #111111;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 7px;
+  padding-left: 0;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, i, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, fieldset, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0 none;
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-kerning: inherit;
+  font-language-override: inherit;
+  font-size: 100%;
+  font-size-adjust: inherit;
+  font-stretch: inherit;
+  font-style: inherit;
+  font-synthesis: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0 5px 0 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+button, input, select, textarea {
+  background-color: #f9f9f9;
+  background-image: none;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  outline-offset: 0;
+  outline-style: none;
+  outline-width: 0;
+}
+.ng-cross {
+  cursor: pointer;
+  margin-right: 15px;
+}
+</style>
+<ion-view title="Portfolio" id="page16" >
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Portfolio</h1>
+      </div>
+    <ion-content padding="true" class="has-header" ng-controller="portfolioCtrl">
+<form id="portfolio-form11" class="list ">
+  <h3 id="portfolio-heading12" style="color:#000000;text-align:center;" class=" ">Create your Portfolio</h3>
+  
+<div class="item item-input " id="portfolio-input11" ng-repeat="p in portfolios track by $index">
+                <span class="input-label">Input</span>
+                <input type="text" ng-model="p.port" placeholder="&quot;Nike Commercial&quot;">
+  <span ng-click="removeItem($index)" class="ng-cross"  >×</span>
+            </div>
+          
+<!-- 
+    <ul>
+      <li ng-repeat="contact in contacts track by $index">
+        <input type="text" ng-model="contact.name" />
+      </li>
+      <li>
+      </li>
+    </ul> -->
+  
+         <button id="portfolio-button13" style="color:#160B03;" ng-click="addmore()" class=" button button-balanced  button-block ">Add more</button>
+        <a ui-sref="tabsController.profile" id="portfolio-button15" style="color:#160B03;" class=" button button-balanced  button-block ">Done</a>
+
+</form>
+</ion-content>
+</ion-view>

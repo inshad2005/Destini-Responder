@@ -1,0 +1,93 @@
+<style type="text/css">
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  color: #111111;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 16px;
+  padding-left: 20px;
+  padding-top: 2px;
+  vertical-align: middle;
+}
+
+.popup-buttons .button {
+
+    background-color: #D3D3D3;
+
+}
+
+
+
+.popup-buttons .button.activated {
+
+    background-color: #D3D3D3;
+
+}
+</style>
+<ion-nav></ion-nav>
+<ion-view title="Registration" id="page8" >
+<div class="bar bar-header light" style="background-color:#F8F8F8">
+         <button class="button-icon icon ion-ios-arrow-back" ng-click="back()"> Back</button>
+          <h1 class="title">Registration</h1>
+      </div>
+    <ion-content padding="true" class="has-header" ng-controller="signUpCtrl">
+        <div class="">
+            <img src="img/destini.png" width="50%" style="display: block; margin:0 auto 20px; ">
+        </div>
+
+<div class="col-sm-6">
+    <!-- FORM ============ -->
+  
+    <form name="userForm" ng-submit="submitForm()" class="list" method="post" novalidate>
+
+        <!-- NAME -->
+        <div class="form-group item item-input" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+            <span aria-label="Name">Name</span>
+            <input type="text" name="name" class="form-control" placeholder="John Wick" ng-model="user.name" required>
+            
+        </div>
+        <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" placeholder="John Wick" class="help-block"><font color="red">You name is required.</font></p>
+      
+        <!-- AGE -->
+       <!--  <div class="form-group item item-input" ng-class="{ 'has-error' : userForm.age.$invalid && !userForm.age.$pristine }">
+            <label>Age</label>
+            <input limit-to="2" type="text" name="age" ng-model="user.age" numbers-only class="form-control"
+            placeholder="24" > 
+        </div>
+         <p ng-show="userForm.age.$invalid && !userForm.age.$pristine" class="help-block"><font color="red">Enter a valid age.</font></p> -->
+        
+        <!-- CONTACT -->
+        <div class="form-group item item-input" ng-class="{ 'has-error' : userForm.contact.$invalid && !userForm.contact.$pristine }">
+            <span aria-label="">Contact</span>
+            <input limit-to="12" type="text" name="contact" ng-model="user.contact" numbers-only class="form-control"
+           placeholder="999-5555-444"> 
+        </div>
+         <p ng-show="userForm.contact.$invalid && !userForm.contact.$pristine" class="help-block"><font color="red">Enter a valid contact.</font></p>
+
+        <!-- EMAIL -->
+        <div class="form-group item item-input" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <span aria-label="">Email</span>
+            <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="johnwick@xyz.com">
+        </div>
+        <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block"><font color="red">Enter a valid email.</font></p>
+
+        <!-- PASSWORD -->
+        <div class="form-group item item-input" ng-class="{ 'has-error' : userForm.pass.$invalid && !userForm.pass.$pristine }">
+            <span aria-label="" >Password</span>
+            <input   type="password" name="pass" class="form-control" ng-model="user.pass" placeholder="********" ng-minlength="6" ng-maxlength="25" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required />
+
+            <!-- <span class="info-icon"><a href="javascript:;" data-toggle="popover" data-content="*Must be between 8 and 20 characters.
+            *Must contain one lower &amp; uppercase letter.
+            *One non-alpha character (a number or a symbol." ><i class="fa fa-info"></i></a></span> -->
+        </div>
+         <p ng-show="userForm.pass.$invalid && !userForm.pass.$pristine" class="help-block"><font color="red">Must contain 1 upper case & 1 special character.</font></p>
+         By clicking Create My Account, you agree to our  
+        <a ng-href="#/page52">Terms and conditions</a>, including our Cookie Use.
+    <button ng-click="register()" id="signUp-button6" style="font-weight:600;color:#160B03;" ng-disabled="userForm.$invalid" class=" button button-balanced  button-block ">Create My Account</button>
+        
+    </form>
+  </div>
+</div>
+</div>
+    </ion-content>
+</ion-view>

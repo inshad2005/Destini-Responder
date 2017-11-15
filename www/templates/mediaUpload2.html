@@ -1,0 +1,44 @@
+<script id="my-popover.html" type="text/ng-template">
+
+  <ion-popover-view style="width:150px;height:170px"><ion-header-bar> <h1 class="title">Select option</h1></ion-header-bar> 
+  <ion-content ng-controller="mediaUpload2Ctrl">
+  
+  <ion-item style=""  id="myDashboard-list-item3" class="item-icon-left" ng-click="pickimages()">
+  <i class="icon ion-camera"></i>Camera</ion-item>
+  <ion-item style=""  id="myDashboard-list-item4" class="item-icon-left" ng-click="pickimagegallery()"> 
+  <i class="icon ion-images"></i>Gallery</ion-item></div></ion-content></ion-popover-view>
+</div>
+</script>
+
+
+
+
+<ion-view title="Media Upload" id="page14">
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Media Upload</h1>
+      </div>
+    <ion-content padding="true" class="has-header">
+        <div id="mediaUpload2-button-bar8" class=" button-bar ">
+            <a ui-sref="tabsController.mediaUpload1" id="mediaUpload2-button21" class=" button button-dark  button-block icon ion-ios-videocam " ng-disabled='true'></a>
+            <a ui-sref="tabsController.mediaUpload" id="mediaUpload2-button22" style="color:#D9E9D9;" class=" button button-dark  button-block icon ion-image " ng-disabled='true'></a>
+        </div>
+        <div class="spacer" style="width: 300px; height: 18px;"></div>
+        <div class="spacer" style="width: 300px; height: 30px;"></div>
+        <div  nd-if="!items" style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
+            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+        </div>
+		
+		
+		 <ion-content>
+                
+                <img ng-src="{{collection.selectedImage}}" style="width:100%; height: auto;"/>
+            </ion-content>
+      
+		
+        <div id="mediaUpload2-button-bar9" class=" button-bar ">
+            <button id="mediaUpload2-button27" ng-click="openPopover($event)" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block ">Click</button>
+            <a ui-sref="tabsController.addDocuments" id="mediaUpload2-button28" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block button-outline icon-right ion-ios-checkmark-empty ">Skip</a>
+            <a ui-sref="tabsController.addDocuments" id="mediaUpload2-button49" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block button-outline icon-right ion-ios-checkmark-empty ">Done</a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,70 @@
+<style type="text/css">
+     .s-pinned { background-color: #f7fcfc!important; } .s-open { background-color:
+    #98f7be!important; }
+    .pop{height: 130px; width: 120px; }
+
+</style>
+<script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view class="pop">
+    
+    <ion-content ng-click="popover.hide()">
+     <span class="button button-balanced button-small button-block" style="color:#160B03;"><b>Action</b></span>
+      <a class="button button-light button-small button-block  icon-left ion-ios-videocam" style="color:#160B03;"
+            ng-href="#/page1/tab4/page15/{{index}}">View Details</a>
+     <a class="button button-light button-small button-block  icon-left ion-pin" style="color:#160B03;"
+            ng-click="unpin(index)">Unpin</a>
+       
+    </ion-content>
+  </ion-popover-view>
+</script>
+
+
+
+<ion-view title="Pinned" hide-back-button="true" id="page9" class=" ">
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Pinned</h1>
+      </div>
+    <ion-content padding="true" class="has-header">
+        <div id="auditions-button-bar1" class=" button-bar ">
+            <button id="auditions-button8" style="color:#160B03;"
+            class=" button button-balanced  button-block icon-right ion-android-folder-open "
+            ng-click="open()">
+                Open
+            </button>
+            <a id="auditions-button9" style="font-weight:600;color:#160B03;font-size:14px;"
+            ng-click="invites()" class="  button button-balanced  button-block icon-right ion-ios-email-outline ">Invites</a>
+            <a id="auditions-button10" style="font-weight:600;color:#160B03;font-size:14px;"
+            ng-click="pinned()" class="button button-balanced button-light  button-block icon-right ion-pin ">Pinned</a>
+        </div>
+         <ion-list id="auditions-list8" class=" ">
+         <ion-item ng-repeat="audition in pauditions"class="item-icon-left item-icon-right dark">
+                <i ng-if="audition.session_type=='video'" class="icon ion-videocamera"></i>
+      <i ng-if="audition.session_type=='image' || audition.session_type=='photo'" class="icon ion-image"></i>
+      <i ng-if="audition.session_type=='None' || audition.session_type=='none'" class="icon ion-information-circled"></i>
+      <i ng-if="audition.session_type=='both'" class="icon ion-social-instagram-outline"></i></i>{{audition.session_name}}
+                
+                <span class="icon ion-android-more-horizontal" ng-click = "openPopover($event, audition.id )"></span>
+            </ion-item>
+           <!--  <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item10" ui-sref="tabsController.audition1">
+                <i class="icon ion-ios-videocam"></i>Audition 1
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item11">
+                <i class="icon ion-ios-copy"></i>Audition 2
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item12">
+                <i class="icon ion-image"></i>Audition 3
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item41">
+                <i class="icon ion-image"></i>Audition 4
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item42">
+                <i class="icon ion-image"></i>Audition 5
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item> -->
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,47 @@
+<style type="text/css">
+    .bar.bar-stable { color: #444444; display: block; } .platform-android
+    .bar .title { font-size: 19px; line-height: 44px; margin: 0px 0px 0px 130px;
+    } .s-pinned { background-color: #f7fcfc!important; } .s-open { background-color:
+    #98f7be!important; }
+</style>
+<ion-view title="Pinned" hide-back-button="true" id="page9" class=" ">
+    <ion-content padding="true" class="has-header">
+        <div id="auditions-button-bar1" class=" button-bar ">
+            <button id="auditions-button8" style="color:#160B03;"
+            class=" button button-balanced  button-block icon-right ion-android-folder-open "
+            ng-click="open()">
+                Open
+            </button>
+            <a id="auditions-button9" style="font-weight:600;color:#160B03;font-size:14px;"
+            ng-click="invites()" class="  button button-balanced  button-block icon-right ion-ios-email-outline ">Invites</a>
+            <a id="auditions-button10" style="font-weight:600;color:#160B03;font-size:14px;"
+            ng-click="pinned()" class="s-pinned button button-light  button-block icon-right ion-pin ">Pinned</a>
+        </div>
+         <ion-list id="auditions-list8" class=" ">
+         <ion-item ng-repeat="audition in pauditions"class="item-icon-left item-icon-right dark"  ng-href="#/page1/tab4/page15/{{audition.id}}">
+                <i class="icon ion-ios-videocam" ></i>{{audition.session_name}}
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+           <!--  <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item10" ui-sref="tabsController.audition1">
+                <i class="icon ion-ios-videocam"></i>Audition 1
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item11">
+                <i class="icon ion-ios-copy"></i>Audition 2
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item12">
+                <i class="icon ion-image"></i>Audition 3
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item41">
+                <i class="icon ion-image"></i>Audition 4
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item42">
+                <i class="icon ion-image"></i>Audition 5
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item> -->
+        </ion-list>
+    </ion-content>
+</ion-view>

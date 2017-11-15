@@ -1,0 +1,26 @@
+<ion-view title="Media Upload" id="page11">
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Media Upload</h1>
+      </div>
+    <ion-content padding="true" class="has-header">
+        <div  id="mediaUpload-button-bar7" class=" button-bar ">
+            <button ng-if="num_video!='0'"id="mediaUpload-button11" class=" button button-dark  button-block icon ion-ios-videocam " ng-disabled='true'></button>
+               
+            <a ng-if="num_image!='0'" ui-sref="tabsController.mediaUpload2" id="mediaUpload-button14" style="color:#D9E9D9;" class=" button button-dark  button-block icon ion-image " ng-disabled='true'></a>
+        </div>
+        <div class="spacer" style="width: 300px; height: 18px;"></div>
+        <div ng-repeat="video in videos" style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="mediaUpload-video1" class=" ">
+            <iframe src="" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+        </div>
+
+        <!--button id="mediaUpload-button19" style="color:#160B03;" class=" button button-calm  button-block button-outline ">Upload a Video</button-->
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+        <div id="mediaUpload-button-bar3" class=" button-bar ">
+            <button ng-if="num_video!='0'" id="mediaUpload-button16" style="font-weight:600;color:#160B03;"  ng-click="captureVideo()" class=" button button-balanced  button-block icon-right ion-ios-recording-outline ">Record Videos</button>
+            <button ng-click="nextupload()" id="mediaUpload-button17" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block button-outline icon-right ion-ios-checkmark-empty ">Next</button>
+        </div>
+         <p style="color:red;">Please ensure you are on WIFI to upload your video other wise you may incur Data charges.<p>
+
+    </ion-content>
+</ion-view>

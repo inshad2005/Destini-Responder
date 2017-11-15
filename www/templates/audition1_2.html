@@ -1,0 +1,71 @@
+
+
+<ion-view title="Session 1" id="page15" >
+    <div class="bar bar-header bar-light" style="background-color:#98F7BE">
+        <h1 class="title">Session 1</h1>
+    </div>
+    <ion-content padding="true" class="has-header">
+        <div class="item item-body " id="session1-list-item-container7">
+            <p id="session1-markdown14" style="margin-top:0px;color:#413C3C;font-size:15px;" class=" "> Name:
+                <strong ng-if="response.session_name">{{response.session_name}}</strong> 
+            <p></p>
+            <strong ng-if="!response.session_name">---</strong> 
+            <p></p>
+            </p>
+        </div>
+        <div class="item item-body " id="session1-list-item-container7">
+            <p id="session1-markdown14" style="margin-top:0px;color:#413C3C;font-size:15px;" class=" "> Type:
+                <strong ng-if="response.session_type">{{response.session_type}}</strong> 
+            <p></p>
+            <strong ng-if="!response.session_type">---</strong> 
+            <p></p>
+            </p>
+        </div>
+        <div class="item item-body " id="session1-list-item-container8">
+            <p id="session1-markdown15" style="margin-top:0px;color:#413C3C;font-size:15px;" class=" "> Location:
+                <strong >{{response.city}}{{response.state}}{{response.country}}</strong>
+            </p>
+        </div>
+        <div class="item item-body " id="session1-list-item-container9">
+            <p id="session1-markdown16" style="margin-top:0px;color:#413C3C;font-size:15px;" class=" "> Description:
+                <strong ng-if="response.short_description">{{response.short_description}}</strong>
+                <strong ng-if="!response.short_description">---</strong>
+            </p>
+        </div>
+        <div class="item item-body " id="session1-list-item-container9">
+            <p id="session1-markdown16" style="margin-top:0px;color:#413C3C;font-size:15px;" class=" "> Start Date:
+                <strong ng-if="response.start_date">{{response.start_date}}</strong>
+                <strong ng-if="!response.start_date">---</strong>
+            </p>
+        </div>
+        <div class="item item-body " id="session1-list-item-container9">
+            <p id="session1-markdown16" style="margin-top:0px;color:#413C3C;font-size:15px;" class=" "> End Date:
+                <strong ng-if="response.end_date">{{response.end_date}}</strong>
+                <strong ng-if="!response.end_date">---</strong>
+            </p>
+        </div>
+        <form id="session1-form15" class="list ">
+            <div class="item item-body " id="session1-list-item-container10">
+                <p id="session1-markdown17" style="margin-top:0px;color:#413C3C;font-size:15px;" class=" ">Intructions:
+                    <strong>{{response.full_description}}</strong><br>
+                <p>Video Length:</p>
+                <strong ng-if="response.video_length">{{response.video_length}} Minute(s)</strong>
+                <strong ng-if="!response.video_length">---</strong>
+                </p>
+            </div>
+            <div class="item item-body " id="session1-list-item-container11">
+                <p id="session1-markdown18" style="margin-top:0px;color:#000000;" class=" ">
+                    <strong>Documents</strong>
+                </p>
+                <button id="session1-button31" style="color:#413C3C;font-size:14px;" class=" button button-balanced  button-block icon-right ion-ios-download ">Download</button>
+            </div>
+        </form>
+        <div class="spacer" style="width: 300px; height: 17px;"></div>
+        <div id="session1-button-bar6" class=" button-bar ">
+            <a ui-sref="tabsController.mediaUpload" id="session1-button32" style="color:#413C3C;font-size:14px;" class=" button button-balanced  button-block icon-right ion-forward ">Apply</a>
+            <a ui-sref="tabsController.sessionsDashboard" id="session1-button33" style="color:#413C3C;font-size:14px;" class=" button button-balanced  button-block button-outline icon-right ion-pin ">Pin</a>
+            <a ui-sref="tabsController.sessionsDashboard" id="session1-button34" style="font-weight:500;color:#413C3C;font-size:14px;" class=" button button-balanced  button-block ">Cancel</a>
+        </div>
+    </ion-content>
+</ion-view>
+

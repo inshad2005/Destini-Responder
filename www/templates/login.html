@@ -1,0 +1,70 @@
+<style type="text/css">
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  color: #111111;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 16px;
+  padding-left: 20px;
+  padding-top: 2px;
+  vertical-align: middle;
+}
+.bar.bar-stable {
+  color: #444444;
+  display: none;
+}
+.cc{
+  padding: 0px 0px 0px 130px;
+}
+
+
+
+.popup-buttons .button {
+
+    background-color: #D3D3D3;
+
+}
+
+
+
+.popup-buttons .button.activated {
+
+    background-color: #D3D3D3;
+
+}
+
+
+</style>
+<ion-view title="Login" id="page7"  class=" ">
+    <ion-content padding="true" class="has-header" ng-controller="loginCtrl">
+        <div class="">
+            <img src="img/destini.png" width="50%" style="display: block; margin:0 auto 20px; ">
+        </div>
+
+        <div class="col-sm-6">
+    <!-- FORM ============ -->
+  
+    <form name="userForm" ng-submit="submitForm()" class="list" method="post" novalidate>
+
+        <!-- EMAIL -->
+        <div class="form-group item item-input" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <span aria-label="Email">Email</span>
+            <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="johnwick@xyz.com" required>
+        </div>
+        <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block"><font color="red">Enter a valid email.</font></p>
+        <!-- PASSWORD -->
+        <div class="form-group item item-input" ng-class="{ 'has-error' : userForm.pass.$invalid && !userForm.pass.$pristine }">
+            <span aria-label="Password">Password</span>
+            <input   type="password" name="pass" class="form-control" ng-model="user.pass" placeholder="********"  required />
+        </div>
+        
+         <!-- <a ui-sref="tabsController.auditions_tab4" id="login-button4" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block " ng-disabled="userForm.$invalid" ng-click="login()">Log In</a> -->
+         <button id="login-button4" style="font-weight:600;color:#160B03;" ng-click="login()" ng-disabled="userForm.$invalid" class=" button button-balanced  button-block ">Log In</button>
+        
+    </form>
+  </div>
+  <button ng-click="fpass()" id="login-button5" class=" button button-positive  button-small button-clear cc ">Forgot Password ?</button>
+        <button ng-click="register()" id="login-button5" class=" button button-positive  button-block button-clear ">Or create an account</button>
+    </ion-content>
+</ion-view>

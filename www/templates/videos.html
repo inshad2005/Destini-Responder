@@ -1,0 +1,88 @@
+<style type="text/css">
+    .platform-android .bar .title {
+  font-size: 19px;
+  line-height: 44px;
+  
+}
+.enterdetail{
+  border: 1px solid black;
+  height: 170px;
+  width: 340px;
+ padding: 10px 10px 10px 10px;
+}
+
+.item {
+  background-color: #ffffff;
+  border-color: #dddddd;
+  border-style: solid;
+  border-width: 1px;
+  color: #444444;
+  display: block;
+  font-size: 16px;
+  margin: -1px;
+  padding: 6px 0px 0px 9px;
+  position: relative;
+  z-index: 2;
+}
+
+/* CSS goes here */
+input {
+  width: 50px;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  color: #111111;
+ background: #fafafc none repeat scroll 0 0;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 16px;
+  padding-left: 13px;
+  padding-top: 2px;
+  vertical-align: middle;
+  width:95%;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #9a9a9a;
+}
+
+
+</style>
+<ion-view title="Videos" id="page23" class=" ">
+<div class="bar bar-header bar-light" style="background-color:#98F7BE">
+<button class="button-icon icon ion-ios-arrow-back" ng-click="$ionicGoBack()"> Back</button>
+          <h1 class="title">Videos</h1>
+      </div>
+    <ion-content padding="true" class="has-header" ng-controller="videosCtrl">
+         
+        <center><h4>Share your video link</h4></center>
+        <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="videos-video3" class=" ">
+            <div ng-if !="video">Please Wait...</div>
+            <iframe ng-if="video" ng-src="{{video.src | trustAsResourceUrl}}" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+        </div>
+       <!--  <button id="videos-button52" style="font-weight:600;color:#160B03;" ng-click="captureVideo()" class=" button button-balanced  button-block ">Upload a Video</button>  -->
+<div class="spacer" style="width: 300px; height: 20px;"></div>
+ <div class="enterdetail">
+ <h3><center>Add your YouTube Link</center></h3>
+<div class="col-sm-6">
+    <!-- FORM ============ -->
+
+    <form name="userForm" ng-submit="submitForm()" class="list" method="post" novalidate>
+        <div class="form-group">
+            <input type="text" placeholder="http://www.youtube.com/myvideo-323SR343/4/1" ng-model="ylink" required>  
+        </div>
+        <button ng-click="send()" id="signUp-button6" style="font-weight:600;color:#160B03;" ng-disabled="userForm.$invalid" class=" button button-balanced  button-block ">Submit</button>
+        
+    </form>
+  <!-- 
+    <form name="userForm" ng-submit="save()" class="list" method="post" novalidate>
+     <div class="form-group item item-input" >
+            <input type="text" placeholder="http://www.youtube.com/myvideo-323SR343/4/1" ng-model="ylink" >  
+            </div>
+    <button ng-click="send()" id="signUp-button6" style="font-weight:600;color:#160B03;" ng-disabled="userForm.$invalid" class=" button button-balanced  button-block ">Submit</button>
+
+    </form> -->
+  </div>
+  </div>
+
+    </ion-content>
+</ion-view>

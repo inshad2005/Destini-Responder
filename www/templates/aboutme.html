@@ -1,0 +1,159 @@
+
+
+<style type="text/css">
+    [contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    display: block; /* For Firefox */
+    }
+    [contenteditable="true"] { 
+    padding: 10px; outline: 1px dashed #CCC; 
+    }
+    [contenteditable]:focus {
+    border-style: dashed;
+    border-color: black;
+    border-width: 1px;
+    }
+    .enterdetail {
+    border: 1px solid #000000;
+    padding: 10px;
+    }
+    .editabout:focus{
+    border-style: dashed;
+    border-color: black;
+    border-width: 1px;
+    padding: 10px;
+    }
+    .editabout:empty:before{
+    content: attr(placeholder);
+    display: block;
+    width: 100%;
+    padding: 10px;
+    }
+    .editabout{
+    outline: 1px dashed #CCC;
+    width: 100%;
+    padding: 10px; w
+    }
+    /*input {
+    width: 50px;
+    }*/
+    textarea,  input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+    color: #111111;
+    background: #fafafc none repeat scroll 0 0;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 16px;
+    padding-left: 7px;
+    padding-top: 2px;
+    vertical-align: middle;
+    width:80%;
+    }
+    /*input::-moz-placeholder, textarea::-moz-placeholder {
+    color: #9a9a9a;
+    }*/
+    .aboutmekatext {
+    background: #fafafc none repeat scroll 0 0;
+    display: block;
+    font-size: 14px;
+    height: 100px;
+    line-height: 1.3;
+    padding-left: 8px;
+    padding-top: 6px;
+    width: 246px;
+    }
+</style>
+<ion-view title="About Me"  class=" " >
+    <div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+        <button class="button-icon icon ion-ios-arrow-back" ng-click="$ionicGoBack()"> Back</button>
+        <h1 class="title">About Me</h1>
+    </div>
+    <ion-content padding="true" class="has-header" ng-controller="aboutmeCtrl" >
+        <div class="">
+            <img src="{{picture}}" width="100" height="100" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <div class="spacer" style="width: 300px; height: 15px;"></div>
+        <!-- <div class="">
+            <img src="img/kkdn8FcAR7qM0XbVZq2p_profileimage.jpeg" width="100" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+            </div>
+            <div class="spacer" style="width: 300px; height: 22px;"></div>
+            <div class="">
+            <img src="img/wV3QIRg5S6WIUwapuvkp_profileimage.jpeg" width="100" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+            </div>
+            <div class="spacer" style="width: 300px; height: 23px;"></div>
+            <div class="">
+            <img src="img/wV3QIRg5S6WIUwapuvkp_profileimage.jpeg" width="100" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+            </div> -->
+        <button id="pictures-button53" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block" ng-click="getPicture()">Take Picture</button>
+        <button id="pictures-button53" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block" ng-click="takePicture()">Take Photo</button>
+        <div class="spacer" style="width: 300px; height: 20px;"></div>
+        <div class="enterdetail">
+            <h3>
+                <center>Edit Your Details</center>
+            </h3>
+            <div class="col-sm-6">
+                <!-- FORM ============ -->
+                <form name="userForm"  class="list" method="post" novalidate>
+                    <h4  aria-label="About me ">Name:</h4>
+                    <!-- <p  contenteditable="true"  placeholder="Name" name="name" ng-model="" strip-br="true" style="white-space:normal; " ></p> -->
+                    <input type="text" placeholder="Name" name="Name" ng-model="name" class="editabout">
+                    <h4  aria-label="About me ">Phone No:</h4>
+                    <input placeholder="Enter your Phone number with country code"  class="editabout"  type="text" name="phone" ng-model="phone" 
+                        ui-br-phone-number ng-click="edit19()" required >
+                    <h4 aria-label=" ">Location: </h4>
+                    <!-- <p  contenteditable="true" placeholder="Location" style="white-space:normal;" ng-model="location" ng-click="edit20()"></p> -->
+                    <input type="text" placeholder="Location" name="Location" ng-model="location" class="editabout">
+                    <h4  aria-label="About me ">About me:</h4>
+                    <p ng-model="aboutme" contenteditable="true" placeholder="About me" style="white-space:normal; " ng-click="edit2()"></p>
+                    <h4 aria-label=" ">Age:</h4>
+                    <!-- <p ng-model="age" contenteditable="true"  placeholder="Age"  style="white-space:normal; " ng-click="edit3()"></p> -->
+                    <input type="text" placeholder="Age" name="Age" ng-model="age" class="editabout">
+                    <h4 aria-label=" ">Facebook Profile Link: </h4>
+                    <!-- <p ng-model="fbprofile" contenteditable="true" placeholder="Facebook Profile Link"style="white-space:normal;" ng-click="edit4()"></p> -->
+                    <input type="text" placeholder="Facebook Profile Link" name="Facebook Profile Link" ng-model="fbprofile" class="editabout">
+                    <h4 aria-label=" ">Twitter Profile link: </h4>
+                    <!-- <p ng-model="twitterprofile" contenteditable="true" placeholder="Twitter Profile link" style="white-space:normal;" ng-click="edit5()"></p> -->
+                    <input type="text" placeholder="Twitter Profile link" name="Twitter Profile link" ng-model="twitterprofile" class="editabout">
+                    <h4 aria-label=" ">Website: </h4>
+                    <!-- <p ng-model="website" contenteditable="true"  placeholder="Website" style="white-space:normal;" ng-click="edit6()"></p> -->
+                    <input type="text" placeholder="Website" name="name" ng-model="website" class="editabout">
+                    <h4 aria-label=" ">Gender: </h4>
+                    <select ng-model="gender" class="editabout">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Transgender">Transgender</option>
+                    </select>
+                    <h4 aria-label=" ">Eyes:</h4>
+                    <!--  <p ng-model="eyes" contenteditable="true" placeholder="Eyes" style="white-space:normal;" ng-click="edit8()"></p> -->
+                    <input type="text" placeholder="Eyes" name="Eyes" ng-model="eyes" class="editabout">
+                    <h4>Build:</h4>
+                    <!-- <p ng-model="build" contenteditable="true" placeholder="Build" style="white-space:normal;" ng-click="edit9()"></p> -->
+                    <input type="text" placeholder="Build" name="Build" ng-model="build" class="editabout">
+                    <h4 aria-label=" ">Height ( in Feet and Inches):</h4>
+                    <!-- <p ng-model="height" contenteditable="true" placeholder="Height" style="white-space:normal;" ></p> -->
+                    <input type="text" placeholder="Height" name="name" ng-model="height" class="editabout">
+                    <h4 aria-label=" ">Weight (in LBs):</h4>
+                    <!-- <p ng-model="weight" contenteditable="true" placeholder="Weight" style="white-space:normal;" ng-click="edit11()"></p> -->
+                    <input type="text" placeholder="Weight" name="Weight" ng-model="weight" class="editabout">
+                    <!-- <h4 aria-label=" ">School:</h4>
+                        <p ng-model="school" contenteditable="true" placeholder="School" style="white-space:normal;" ng-click="edit12()"></p>
+                        <h4 aria-label=" ">Passing Year:</h4>
+                        <p ng-model="passingyr" contenteditable="true" placeholder="Passing Year" style="white-space:normal;" ng-click="edit13()"></p>
+                        
+                        <h4 aria-label=" ">Hair Color:</h4>
+                        <p ng-model="hcolor" contenteditable="true" placeholder="Hair Color" style="white-space:normal;" ng-click="edit14()"></p>
+                        <h4 aria-label=" ">Ethnicities:</h4>
+                        <p ng-model="ethnicities" contenteditable="true" placeholder="Ethnicities" style="white-space:normal;" ng-click="edit15()"></p>
+                        <h4 aria-label=" ">Sports Skills:</h4>
+                        <p ng-model="sports" contenteditable="true" placeholder="Sports Skills" style="white-space:normal;" ng-click="edit16()"></p>
+                        <h4 aria-label=" ">Roles- Movies:</h4>
+                        <p ng-model="roles_movie" contenteditable="true" placeholder="Roles- Movies" style="white-space:normal;" ng-click="edit17()"></p>
+                        <h4 aria-label=" ">Roles- Television:</h4>
+                        <p ng-model="roles_tv" contenteditable="true" placeholder="Roles- Television" style="white-space:normal;" ng-click="edit18()"></p> -->
+                    <button ng-click="save(height,weight)"  id="signUp-button6" class="button button-balanced button-full">Save My Profile</button>
+                </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+

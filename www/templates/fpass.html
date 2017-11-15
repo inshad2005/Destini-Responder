@@ -1,0 +1,38 @@
+<style type="text/css">
+
+
+.tf{
+  margin: 10px 0px 0px 80px;
+  border: 1px solid black;
+
+
+}
+.tff{
+  margin: 10px 0px 0px 80px;
+ 
+
+
+}
+.but{
+  margin: 20px 0px 0px 100px;
+}
+
+</style>
+<ion-view title="Forget Password" id="page32"  >
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+           <button class="button-icon icon ion-ios-arrow-back" ng-click="$ionicGoBack()"> Back</button>
+          <h1 class="title">Forget Password</h1>
+      </div>
+    <ion-content padding="true" class="has-header" ng-controller="fpassCtrl">
+   <form name="userForm">
+    <!-- EMAIL -->
+        <div ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <h4>Enter your Email & get your Password!</h4>
+            <input type="email" name="email" class="tf" ng-model="email" placeholder="johnwick@xyz.com" required>
+        </div>
+        <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="tff"><font color="Red">Enter a valid email.</font></p><br>
+
+      <button id="login-button4" style="font-weight:600;color:#160B03;" ng-click="getpass()" class=" button button-balanced  button-small but" ng-disabled="userForm.$invalid">Get Your Password</button>
+      <form>
+    </ion-content>
+</ion-view>

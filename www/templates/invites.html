@@ -1,0 +1,74 @@
+<style type="text/css">
+    
+.s-open
+{
+  background-color: #98f7be!important;
+}
+.s-pinned
+{
+  background-color: #98f7be!important;
+}
+
+
+/*
+a:nth-child(0){background: blue;}
+a:nth-child(1){background: blue;}
+a:nth-child(2){background: blue;}*/
+
+/*a:active {
+    background-color: white;
+}
+*/.button.button-block-outline.activated{
+      background-color: white;
+}
+</style>
+ <spinner name="pageLoading" ng-cloak="">
+      <div class="overlay"></div>
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+      <div class="please-wait">Loading Invites...</div>
+    </spinner>
+<ion-view title="Invites" hide-back-button="true" id="page9" class=" ">
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Invites</h1>
+      </div>
+    <ion-content padding="true" class="has-header">
+
+        <div id="auditions-button-bar1" class=" button-bar ">
+            <button id="auditions-button8" style="color:#160B03;" class="s-open button button-balanced  button-block icon-right ion-android-folder-open " ng-click="open()">Open</button>
+            <a id="auditions-button9" style="font-weight:600;color:#160B03;font-size:14px;" ng-click="invites()" class="button button-light  button-block icon-right ion-ios-email-outline ">Invites</a>
+            <a id="auditions-button10" style="font-weight:600;color:#160B03;font-size:14px;" ng-click="pinned()" class=" s-pinned button button-balanced  button-block icon-right ion-pin ">Pinned</a>
+        </div>
+        <ion-list id="auditions-list8" class="">
+         <ion-item ng-repeat="invite in Audinvites" class="item-icon-left item-icon-right dark"  ng-href="#/page1/tab4/page15/{{invite.id}}">
+       <i ng-if="invite.session_type=='video'" class="icon ion-videocamera"></i>
+      <i ng-if="invite.session_type=='image' || invite.session_type=='photo'" class="icon ion-image"></i>
+      <i ng-if="invite.session_type=='None' || invite.session_type=='none'" class="icon ion-information-circled"></i>
+      <i ng-if="invite.session_type=='both'" class="icon ion-social-instagram-outline"></i>{{invite.session_name}}
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+           <!--  <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item10" ui-sref="tabsController.audition1">
+                <i class="icon ion-ios-videocam"></i>Audition 1
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item11">
+                <i class="icon ion-ios-copy"></i>Audition 2
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item12">
+                <i class="icon ion-image"></i>Audition 3
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item41">
+                <i class="icon ion-image"></i>Audition 4
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right dark  " id="auditions-list-item42">
+                <i class="icon ion-image"></i>Audition 5
+                <i class="icon ion-android-more-horizontal"></i>
+            </ion-item> -->
+        </ion-list>
+    </ion-content>
+</ion-view>

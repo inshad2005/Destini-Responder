@@ -1,0 +1,58 @@
+<style type="text/css">
+   
+</style>
+<ion-view title="Profile" id="page17" class=" ">
+<div class="bar bar-header bar-light" style="background-color:#F8F8F8">
+          <h1 class="title">Profile</h1>
+      </div>
+    <ion-content padding="true" class="has-header">
+        <form id="profile-form6" class="list ">
+            <ion-item class="item-avatar  item-icon-right  " id="profile-list-item21" ui-sref="tabsController.aboutme">
+                <img ng-if="!picture" ng-src="http://placehold.it/300x300" />
+				<img ng-if="picture"  src="{{picture}}">
+                <h2>{{name}}</h2>
+                <p ng-bind-html="aboutme" style="white-space:normal;">{{aboutme}}</p>
+                <i class="icon ion-information-circled"></i>
+            </ion-item>
+        </form>
+        <div id="profile-button-bar10" class=" button-bar "></div>
+        <div id="profile-button-bar12" class=" button-bar ">
+            <button id="profile-button39" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block ">Basic</button>
+            <a ui-sref="tabsController.profileDetails" id="profile-button40" style="font-weight:600;color:#160B03;" class=" button button-balanced  button-block button-outline ">Detail</a>
+        </div>
+        <ion-list id="profile-list14" class=" ">
+            <ion-item class="item-icon-left item-icon-right  " id="profile-list-item22" ui-sref="tabsController.aboutme">
+                <i class="icon ion-ios-contact"></i>Edit Profile
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i>
+            </ion-item>
+             <ion-item class="item-icon-left item-icon-right  " id="profile-list-item17" ng-click="fbopen()">
+                <i class="icon ion-ios-contact"></i>Social Profile
+                <i class="icon ion-social-facebook"></i>
+            </ion-item>
+            <!--ion-item class="item-icon-left item-icon-right  " id="profile-list-item26" ui-sref="tabsController.portfolio">
+                <i class="icon ion-android-clipboard"></i>Portfolio
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i>
+            </ion-item-->
+            <ion-item class="item-icon-left item-icon-right  " id="profile-list-item32" ui-sref="tabsController.resume">
+                <i class="icon ion-android-document"></i>Resume
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right  " id="profile-list-item25" ui-sref="tabsController.pictures">
+                <i class="icon ion-image"></i>Pictures
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right  " id="profile-list-item43" ui-sref="tabsController.videos">
+                <i class="icon ion-ios-videocam-outline"></i>Intro Videos
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i>
+            </ion-item>
+            <!-- <ion-item class="item-icon-left item-icon-right  " id="profile-list-item24">
+                <i class="icon ion-ios-location"></i>Location
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i>
+            </ion-item> -->
+			<ion-item class="item-icon-left item-icon-right  " id="profile-list-item24" ng-click="logout()">
+                <i class="icon icon ion-log-out"></i>Logout
+                <i class="icon ion-android-arrow-dropdown-circle icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
